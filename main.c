@@ -25,7 +25,7 @@ int main() {
 
         fclose(Filepointer); // closing the file after we're done with it
     }
-    Filepointer = fopen("experimental.txt","w");// it can make it possible to only write it also deletes the old data in that file
+    Filepointer = fopen("experimental.txt","w");// only writing mode, it also deletes the old data in that file
     if(Filepointer==NULL) {
         printf("you couldn't open it!\n");
     }
@@ -52,7 +52,7 @@ int main() {
     else
     {
         fputc('\n',Filepointer);// with this part we make sure that our code will
-        // append to second line of this txt
+        // append directly to the second line of this txt
         while (counter < lengthofdata2 && data2[counter]!='\0') {
             printf("we're currently adding this char: %c\n", data2[counter]);
 
@@ -62,7 +62,7 @@ int main() {
     }
     fputc('\n',Filepointer);
     fputc('<',Filepointer);
-    fputc('E',Filepointer); // sign for the end of the file
+    fputc('E',Filepointer); // custom sign for the end of the file
     fputc('>',Filepointer);
 
 
@@ -88,11 +88,11 @@ int main() {
 
         char buffer;
         //
-        // printf("Something happening\n");
+        // printf("wip\n");
 
         while(1)
         {
-            //printf("inside while check\n");
+            //printf("while checkpoint\n");
             buffer=fgetc(Filepointer);
             if(buffer=='<')
             {
